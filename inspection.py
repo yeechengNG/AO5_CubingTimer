@@ -9,20 +9,20 @@ class InspectionTimer:
         self._update_thread = None
 
     def start_inspection(self):
-        """Starts the inspection timer."""
+        # Starts the inspection timer
         self.start_time = time.time()
         self._running = True
         self._update_thread = threading.Thread(target=self._update_inspection_timer)
         self._update_thread.start()
 
     def stop(self):
-        """Stops the timer."""
+        # Stops the timer
         self._running = False
         if self._update_thread is not None and threading.current_thread() != self._update_thread:
             self._update_thread.join()
 
     def _update_inspection_timer(self):
-        """Updates the inspection timer display in real-time."""
+        # Updates the inspection timer display in real-time
         inspection_duration = 15
         start_time = time.time()
 
@@ -55,7 +55,7 @@ class InspectionTimer:
         self.stop()
 
     def _show_warning(self, elapsed):
-        """Shows a warning message for the current elapsed time."""
+        # Shows a warning message for the current elapsed time
         warning_display = f"\rWarning: {elapsed} SECONDS!"
         sys.stdout.write(warning_display.ljust(30))
         sys.stdout.flush()
