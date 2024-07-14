@@ -13,14 +13,14 @@ class SolvingTimer:
         self._key_pressed = False
 
     def start_solving(self):
-        """Starts the solving timer."""
+        # Starts the solving timer
         self.start_time = time.time()
         self._running = True
         self._update_thread = threading.Thread(target=self._update_solving_timer)
         self._update_thread.start()
 
     def stop(self):
-        """Stops the timer."""
+        # Stops the timer
         self._running = False
         if self._update_thread is not None and threading.current_thread() != self._update_thread:
             self._update_thread.join()
@@ -32,22 +32,22 @@ class SolvingTimer:
             self.end_time = None
 
     def apply_plus_two(self):
-        """Applies +2 penalty."""
+        # Applies +2 penalty
         self.penalty = "+2"
 
     def apply_dnf(self):
-        """Marks the solve as DNF."""
+        # Marks the solve as DNF
         self.penalty = "DNF"
 
     def get_solving_time(self):
-        """Returns the solving time in seconds."""
+        # Returns the solving time in seconds
         if self.end_time is None:
             return None
         else:
             return self.end_time - self.start_time
 
     def _update_solving_timer(self):
-        """Updates the solving timer display in real-time."""
+        # Updates the solving timer display in real-time
         while self._running:
             elapsed = time.time() - self.start_time
 
@@ -78,7 +78,7 @@ class SolvingTimer:
         return f"{minutes:02d}:{seconds:02d}.{milliseconds_tens}{milliseconds_units}"
 
     def _check_keypress(self):
-        """Checks for user input (any key) to stop the timer early."""
+        # Checks for user input (any key) to stop the timer early
         fd = sys.stdin.fileno()
         old_settings = termios.tcgetattr(fd)
         try:
