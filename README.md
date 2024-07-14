@@ -15,11 +15,20 @@ Rubik's_ScramblerTimer is a Python-based Rubik's Cube timer inspired by CS Timer
 - `sys`, `termios`, `tty`, `select`: For handling terminal input and output.
 - `random`: For generating random scrambles.
 
-## Future Improvements
+## Possible Improvements
 
-- Implement more advanced statistical metrics like standard deviation.
-- Enhance scramble generation to allow specific scramble generation based on algorithms or user input.
-- Improve user interface and add graphical elements for better user experience.
+- **Statistical Analysis**: Introduce average of 5 solves (AO5) and average of 12 solves (AO12) to provide quick insights into recent performance trends. Calculate Best Potential Average (BPA) and Worst Potential Average (WPA) to assess optimal and suboptimal session averages, respectively.
+
+### User Interface
+- **Graphical User Interface (GUI)**: Develop a user-friendly GUI to enhance user experience and simplify interaction with the timer.
+
+### Customization
+- **Cube Size Selection**: Allow users to choose different cube sizes (e.g., 3x3, 2x2, 4x4) and customize settings accordingly.
+- **Specific Scramble Generation**: Enhance scramble generation capabilities to support specific algorithms or user-defined scramble sequences.
+
+### Performance Optimization
+- **Code Optimization**: Optimize the codebase for faster scramble generation and smoother timer operations, ensuring minimal delay between solves.
+
 
 ## Python Skills Demonstrated
 
