@@ -5,6 +5,7 @@ class ScrambleGenerator:
         self.moves = ["U", "D", "L", "R", "F", "B"]
         self.modifiers = ["", "'", "2"]
 
+    # Scramble length is 20 
     def generate_scramble(self, length=20):
         scramble = []
         previous_move = ""
